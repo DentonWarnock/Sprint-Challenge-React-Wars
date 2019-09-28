@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from "axios";
 import Card from "./components/Card.js";
+import styled from "styled-components";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
