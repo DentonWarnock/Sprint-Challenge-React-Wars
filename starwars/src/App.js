@@ -4,13 +4,15 @@ import axios from "axios";
 import Card from "./components/Card.js";
 import styled from "styled-components";
 
-const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+  width: 95%;
+  `
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
-  // side effect in a component, you want to think about which state and/or props it should
-  // sync up with, if any.
+const App = () => {
   const [ person, setPerson ] = useState([]);
 
   useEffect(() => {
@@ -30,9 +32,11 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {person.map((value, index) => {
-        return <Card value={value} key={index} />
-      })}
+      <Grid >
+          {person.map((value, index) => {
+          return <Card value={value} key={index} />
+        })}
+      </Grid>
     </div>
   );
 }
