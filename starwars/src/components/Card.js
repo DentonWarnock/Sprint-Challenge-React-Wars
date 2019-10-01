@@ -44,7 +44,7 @@ export default function Card({ value }) { // take in props from App.js
       }
     }
     fetchData();
-  }, []);
+  }, [value]);
   
   return (
     <StyledCard>
